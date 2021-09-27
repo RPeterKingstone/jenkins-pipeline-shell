@@ -1,0 +1,14 @@
+node {
+   stage('Scripting') {
+     dir ('/var/jenkins_home/workspace/shell-pipeline-sample') { 
+    sh('./my-sample.sh')
+}
+   }
+   stage('Shell from git') {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']],
+  userRemoteConfigs: [[url: 'https://github.com/PeterKingstone/jenkins-pipeline-shell.git',credentialsId:'a373c291-2018-417e-9629-8f61a1c2e031']]
+  echo "${env.WORKSPACE}"
+])
+                                sh -x ${env.WORKSPACE}/shell/my-sample.sh
+        }
+      }
