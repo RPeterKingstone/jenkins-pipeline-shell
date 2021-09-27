@@ -1,0 +1,13 @@
+#version with sample commands for mail, awk, for, mysql, grep
+
+# echo test
+
+echo "123"
+echo "This is the beginning"
+CUR_DATE=$(date '+%Y%m%d')
+
+
+export PATH=/usr/bin:${PATH}
+echo $PATH
+#Mail
+#echo " Mail sent on ${CUR_DATE}" | mail -s "test email" r.kingstone@gmail.com -aFrom:r.kingstone@gmail.com
