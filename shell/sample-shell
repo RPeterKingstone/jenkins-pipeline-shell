@@ -11,3 +11,16 @@ export PATH=/usr/bin:${PATH}
 echo $PATH
 #Mail
 #echo " Mail sent on ${CUR_DATE}" | mail -s "test email" r.kingstone@gmail.com -aFrom:r.kingstone@gmail.com
+
+
+filename=/home/devsupport/test.txt
+
+for i in $(cat $filename); do
+echo "tester: $i"
+done
+
+awk -F "," '{print $1,$2,$3*$4,$5}' $filename > awk_file.txt
+sed '3 s/emp/employee/' $filename > test1.txt
+
+#EOF
+
